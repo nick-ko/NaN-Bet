@@ -1,0 +1,44 @@
+{% extends  'front_layout.html' %}
+
+{% block content %}
+    <div class="site-section bg-light" data-aos="fade-up">
+    <div class="col-md-12 text-center">
+            <h2 class="text-black">Connexion</h2>
+    </div>
+      <div class="container">
+        <div class="row align-items-first">
+            {% include 'partials/_alerts.html' %}
+            <div class="col-md-3">
+          </div>
+          <div class="col-md-6">
+            <form action="{% url 'login' %}" method="POST" class="bg-white">
+               {% csrf_token %}
+              <div class="p-3 p-lg-5 border">
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_fname" class="text-black">Speudo <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="c_fname" name="username" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Mot de Passe <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="c_email" name="password" placeholder="" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-lg-12">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Connexion">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3">
+          </div>
+
+        </div>
+      </div>
+    </div>
+{% endblock %}
